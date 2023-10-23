@@ -9,7 +9,7 @@ import numpy as np
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-
+import mlflow
 
 # define functions
 def main(args):
@@ -66,6 +66,7 @@ if __name__ == "__main__":
     # add space in logs
     print("\n\n")
     print("*" * 60)
+    mlflow.autolog()
 
     # parse args
     args = parse_args()
