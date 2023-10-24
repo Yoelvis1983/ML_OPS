@@ -7,9 +7,9 @@ command: >-
 inputs:
   training_data: 
     type: uri_folder 
-    path: https://github.com/Yoelvis1983/ML_OPS/blob/main/experimentation/data/diabetes-dev.csv
+    path: ../experimentation/data
   reg_rate: 0.01
-environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: azureml:machine 
+environment: azureml://registries/azureml/environments/sklearn-1.0/versions/17
+compute: azureml:train-machine 
 experiment_name: primer_clic 
 description: Primer entrenamiento
