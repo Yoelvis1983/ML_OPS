@@ -1,0 +1,13 @@
+name: Code checks simulator
+
+on:
+  [pull_request]
+
+jobs:
+  mostrar:
+    name: linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: |
+            echo "Will add code checks here in next challenge"
