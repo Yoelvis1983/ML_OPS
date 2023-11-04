@@ -11,6 +11,8 @@ jobs:
       uses: actions/checkout@main
     - name: Install az ml extension
       run: az extension add -n ml -y
+    - name: AzureCount
+      run: az login --scope https://management.azure.com/.default
     - name: Azure
       run: az account set --subscription 86a0602e-90f9-498d-8821-5249a6d7effa
     - name: AzureWork
