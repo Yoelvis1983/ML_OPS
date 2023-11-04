@@ -11,6 +11,10 @@ jobs:
       uses: actions/checkout@main
     - name: Install az ml extension
       run: az extension add -n ml -y
+    - name: Azure
+      run: az account set --subscription 86a0602e-90f9-498d-8821-5249a6d7effa
+    - name: AzureWork
+      run: az configure --defaults workspace=mlops-work-group group=mlops-group
     - name: Aprovisionar train compute
       run: az ml compute create -n cpu-cluster --type amlcompute --min-instances 0 --max-instances 4
 
