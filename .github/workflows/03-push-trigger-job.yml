@@ -19,4 +19,7 @@ jobs:
       run: az configure --defaults workspace=mlops-work-group group=mlops-group
     - name: Trigger Azure Machine Learning job
       run: |
-        az ml job create --file src/job.yml
+        run_id=$(az ml job create --file src/job.yml --query name -o tsv)
+    - name: Register the trained model
+      run: |
+        az ml model create -n sklearn-model-example -v 1 -p runs:/$run_id/model --type mlflow_model
